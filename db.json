@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Complete Assigments",
+      "status": false
+    },
+    {
+      "title": "Learn MERN",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "Learn Time Complexity",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "Watch Ms.Marvel",
+      "status": false,
+      "id": 4
+    },
+    {
+      "title": "talk to faruk",
+      "status": false,
+      "id": 5
+    }
+  ]
+}

@@ -52,3 +52,27 @@ export const addTodo=(data)=>(dispatch)=>{
         console.log(err)
     })
 }
+export const edittodo=(id,data)=>(dispatch)=>{
+    // dispatch(addtodoRequest)
+    console.log(data)
+    return axios.patch(`http://localhost:8080/todos/${id}`,data).then((res)=>{
+       
+        dispatch(fetchTodo())
+        
+    }).catch((err)=>{
+        // dispatch(addtodoFailure)
+        console.log(err)
+    })
+}
+export const deletetodo=(id)=>(dispatch)=>{
+    
+    return axios.delete(`http://localhost:8080/todos/${id}`).then((res)=>{
+       
+        dispatch(fetchTodo())
+        
+        
+    }).catch((err)=>{
+        // dispatch(addtodoFailure)
+        console.log(err)
+    })
+}

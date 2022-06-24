@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { authenticate } from "../Redux/Auth/action";
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
+import { useNavigate } from "react-router-dom";
 export const Signin=()=>{
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("")
     const dispatch=useDispatch()
+    const navigate=useNavigate()
+    // {
+    //     "email": "eve.holt@reqres.in",
+    //     "password": "cityslicka"
+    // }
     const Signin=()=>{
         // console.log("hi")
-        dispatch(authenticate({email,password}))
+        dispatch(authenticate({email,password})).then(()=>{
+            navigate(-1)
+        })
     }
     return <div>
        <input value={email} type="text" placeholder="email" onChange={(e)=>setEmail(e.target.value)} />

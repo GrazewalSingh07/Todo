@@ -1,5 +1,6 @@
 import * as types from "./actionTypes"
 import axios from "axios"
+import { saveData } from "../../utils/localStorage"
 export const authRequest=()=>{
     return{
         type:types.AUTH_REQUEST
@@ -18,12 +19,13 @@ export const authFailure=(payload)=>{
     }
 }
 export const authenticate=(data)=>(dispatch)=>{
-    console.log(data)
+    // console.log(data)
     dispatch(authRequest)
     return axios.post("https://reqres.in/api/login",data
     ).then((res)=>{
         dispatch(authSuccess(res.data.token))
-        console.log(res)
+        saveData(res.data.token)
+        console.log(res.data)
     }).catch((err)=>{
         dispatch(authFailure(err.data))
         console.log(err)

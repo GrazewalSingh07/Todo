@@ -9,13 +9,13 @@ export const Todos=()=>{
     const navigate=useNavigate()
     const dispatch=useDispatch()
     const todo=useSelector((state)=>state.todo.todo)
-    const isAuth=useSelector((state)=>state.auth.isAuth)
+    const isAuth=useSelector((state)=>state.auth.token)
     const addedtodo=useSelector((state)=>state.todo.addedtodo)
     useEffect(()=>{
         dispatch(fetchTodo())
         return 
     },[addedtodo])
-    if(isAuth==false){
+    if(isAuth==null){
         alert("Login please")
         return <Navigate to="/signin"></Navigate>
     }

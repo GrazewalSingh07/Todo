@@ -15,10 +15,10 @@ export const Todos=()=>{
         dispatch(fetchTodo())
         return 
     },[addedtodo])
-    // if(isAuth==false){
-    //     alert("Login please")
-    //     return <Navigate to="/signin"></Navigate>
-    // }
+    if(isAuth==false){
+        alert("Login please")
+        return <Navigate to="/signin"></Navigate>
+    }
     
     return <div>
         <h1> Your Todo List </h1>

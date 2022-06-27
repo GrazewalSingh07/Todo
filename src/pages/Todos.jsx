@@ -11,8 +11,10 @@ export const Todos=()=>{
     const todo=useSelector((state)=>state.todo.todo)
     const isAuth=useSelector((state)=>state.auth.token)
     const addedtodo=useSelector((state)=>state.todo.addedtodo)
+
     useEffect(()=>{
         dispatch(fetchTodo())
+       
         return 
     },[addedtodo])
     if(isAuth==null){

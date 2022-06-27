@@ -17,6 +17,8 @@ export const todoFailure=()=>{
         type:types.FETCH_TODO_FAILURE
     }
 }
+
+
 export const fetchTodo=()=>(dispatch)=>{
     dispatch(todoRequest)
     return axios.get("http://localhost:8080/todos").then((res)=>{
@@ -26,6 +28,8 @@ export const fetchTodo=()=>(dispatch)=>{
         dispatch(todoFailure)
     })
 }
+
+
 export const addtodoRequest=()=>{
     return{
         type:types.ADD_FETCH_TODO_REQUEST
@@ -53,14 +57,13 @@ export const addTodo=(data)=>(dispatch)=>{
     })
 }
 export const edittodo=(id,data)=>(dispatch)=>{
-    // dispatch(addtodoRequest)
-    console.log(data)
+    
     return axios.patch(`http://localhost:8080/todos/${id}`,data).then((res)=>{
        
         dispatch(fetchTodo())
         
     }).catch((err)=>{
-        // dispatch(addtodoFailure)
+        
         console.log(err)
     })
 }

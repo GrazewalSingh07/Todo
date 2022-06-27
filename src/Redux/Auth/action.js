@@ -25,7 +25,7 @@ export const authenticate=(data)=>(dispatch)=>{
     ).then((res)=>{
         dispatch(authSuccess(res.data.token))
         saveData(res.data.token)
-        console.log(res.data)
+        // console.log(res.data)
     }).catch((err)=>{
         dispatch(authFailure(err.data))
         console.log(err)

@@ -12,5 +12,5 @@ export const loadData=(key)=>{
 }
 
 export const saveData=(value)=>{
-    let temp=localStorage.setItem("key",JSON.stringify(value))
+    localStorage.setItem("key",JSON.stringify(value))
 }

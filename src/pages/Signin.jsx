@@ -3,8 +3,8 @@ import { authenticate } from "../Redux/Auth/action";
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import { useNavigate } from "react-router-dom";
 export const Signin=()=>{
-    const [email,setEmail]=useState("");
-    const [password,setPassword]=useState("")
+    const [email,setEmail]=useState("eve.holt@reqres.in");
+    const [password,setPassword]=useState("cityslicka")
     const dispatch=useDispatch()
     const navigate=useNavigate()
     // {

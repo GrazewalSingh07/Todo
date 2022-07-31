@@ -1,14 +1,9 @@
 {
   "todos": [
     {
-      "title": "kuch bhi",
+      "title": "Revise DSA",
       "status": false,
-      "id": 3
-    },
-    {
-      "title": "complete assigment",
-      "status": false,
-      "id": 4
+      "id": 5
     }
   ]
 }

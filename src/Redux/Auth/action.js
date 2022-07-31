@@ -31,3 +31,7 @@ export const authenticate=(data)=>(dispatch)=>{
         console.log(err)
     })
 }
+export const LOGOUT=(dispatch)=>{
+
+   dispatch({type:types.LOG_OUT})
+}

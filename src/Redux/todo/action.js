@@ -23,7 +23,7 @@ export const fetchTodo=()=>(dispatch)=>{
     dispatch(todoRequest)
     return axios.get("http://localhost:8080/todos").then((res)=>{
         dispatch(todoSuccess(res.data))
-        // /console.log(res.data)
+         
     }).catch((err)=>{
         dispatch(todoFailure)
     })

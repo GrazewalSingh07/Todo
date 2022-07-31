@@ -5,7 +5,7 @@ import * as types from "./actionTypes"
 const initState={
    
    token:loadData("key")||null,
-//    isAuth:this.token?true:false,
+//    isAuth:loadData("key")?true:false,
    error:null
 
 }
@@ -24,6 +24,13 @@ export const authReducer=(state=initState,{type,payload})=>{
             return{
                 ...state,
                 error:payload
+            }
+        }
+        case types.LOG_OUT:{
+
+            return{
+                ...state,
+               token:loadData("key")||null
             }
         }
         default:{

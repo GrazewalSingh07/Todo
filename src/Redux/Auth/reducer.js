@@ -5,7 +5,7 @@ import * as types from "./actionTypes"
 const initState={
    
    token:loadData("key")||null,
-//    isAuth:loadData("key")?true:false,
+ 
    error:null
 
 }

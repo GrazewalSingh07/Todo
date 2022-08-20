@@ -3,15 +3,14 @@ import { useState } from "react"
 import { addTodo, fetchTodo } from "../Redux/todo/action"
 import { useSelector } from "react-redux"
 import { Navigate } from "react-router"
+import { Container, Input, Stack } from "@chakra-ui/react"
 export const InputTodo=()=>{
 
     const dispatch=useDispatch()
     const [temptodo,settemptodo]=useState("")
     const isAuth=useSelector((state)=>state.auth.token)
     const PostaddTodo=()=>{
-        dispatch(addTodo({title:temptodo,status:false})).then((result) => {
-            dispatch(fetchTodo)
-        }) 
+        dispatch(addTodo({title:temptodo,status:false}))
          
     }
     if(isAuth==null){
@@ -19,8 +18,10 @@ export const InputTodo=()=>{
         return <Navigate to="/signin"></Navigate>
     }
     
-    return <div>
-       <input type="text" value={temptodo} placeholder=" what is next" onChange={(e)=>settemptodo(e.target.value)}/>
-       <input type="submit" onClick={PostaddTodo}  />
-    </div>
+    return <Container>
+      <Stack>
+        <Input type="text" value={temptodo} placeholder=" what is next" onChange={(e)=>settemptodo(e.target.value)}/>
+        <Input type="submit" onClick={PostaddTodo}  />
+      </Stack>
+    </Container>
 }

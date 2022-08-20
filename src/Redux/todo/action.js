@@ -1,6 +1,6 @@
 import axios from "axios"
 import * as types from "./actionTypes"
-
+ 
 export const todoRequest=()=>{
     return{
         type:types.FETCH_TODO_REQUEST
@@ -19,13 +19,18 @@ export const todoFailure=()=>{
 }
 
 
-export const fetchTodo=()=>(dispatch)=>{
-    dispatch(todoRequest)
+export const fetchTodo=()=>(dispatch,state)=>{
+    dispatch({type:types.FETCH_TODO_REQUEST})
     return axios.get("http://localhost:8080/todos").then((res)=>{
-        dispatch(todoSuccess(res.data))
+        dispatch({
+            type:types.FETCH_TODO_SUCCESS,
+            payload:res.data
+        })
          
     }).catch((err)=>{
-        dispatch(todoFailure)
+        dispatch({
+            type:types.FETCH_TODO_FAILURE
+        })
     })
 }
 
@@ -46,13 +51,13 @@ export const addtodoFailure=()=>{
     }
 }
 export const addTodo=(data)=>(dispatch)=>{
-    // dispatch(addtodoRequest)
+     
     return axios.post("http://localhost:8080/todos",data).then((res)=>{
-        dispatch(addtodoSuccess(res.data))
+        dispatch(addtodoSuccess())
         dispatch(fetchTodo())
         console.log(res)
     }).catch((err)=>{
-        // dispatch(addtodoFailure)
+         
         console.log(err)
     })
 }

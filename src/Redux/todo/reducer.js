@@ -2,7 +2,7 @@ import * as types from "./actionTypes"
 
 const initState={
     todo:[],
-    isLoading:true,
+    isLoading:false,
     isError:false,
 
     addtodosuccess:false,
@@ -14,7 +14,7 @@ export const todoreducer=(state=initState,{type,payload})=>{
    
     switch(type){
         case types.FETCH_TODO_REQUEST:{
-            return{
+            return  {
                 ...state,
                 isLoading:true
             }
@@ -37,7 +37,6 @@ export const todoreducer=(state=initState,{type,payload})=>{
         case types.ADD_FETCH_TODO_SUCCESS:{
             return{
                 addtodosuccess:true,
-
             }
         }
         case types.ADD_FETCH_TODO_FAILURE:{

@@ -2,8 +2,39 @@
   "todos": [
     {
       "title": "Revise DSA",
-      "status": false,
+      "status": true,
+      "category": "Personal",
       "id": 5
+    },
+    {
+      "title": "Learn redux",
+      "status": false,
+      "category": "Personal",
+      "id": 6
+    },
+    {
+      "title": "Write mail to CEO",
+      "status": true,
+      "category": "Official",
+      "id": 7
+    },
+    {
+      "title": "Meet Client",
+      "status": false,
+      "category": "Official",
+      "id": 8
+    },
+    {
+      "title": "Go to market",
+      "status": true,
+      "category": "others",
+      "id": 9
+    },
+    {
+      "title": "Feed dog",
+      "status": false,
+      "category": "others",
+      "id": 10
     }
   ]
 }
